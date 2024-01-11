@@ -49,25 +49,69 @@ const isValid = isSum50 && isTwoOdd && !isOver25 && isUnique;
 //   !(n1 > 25 || n2 > 25 || n3 > 25 || n4 > 25) && 
 //   (n1 != n2 && n1 != n3 && n1 != n4 && n2 != n3 && n2 != n4 && n3 != n4);
 
-  //Check if all numbers are deivisible by 5.
-  const allDeivisibleBy5 = (n1%5) +(n2%5)+(n3%5)+(n4%5)==0
-  console.log(`All number are divisible by 5: ${allDeivisibleBy5}`)
+//Check if all numbers are deivisible by 5.
+const allDeivisibleBy5 = (n1 % 5) + (n2 % 5) + (n3 % 5) + (n4 % 5) === 0
+console.log(`All number are divisible by 5: ${allDeivisibleBy5}`)
 
-  //Check if the first number is larger than last
-  const fisrtNumLargerThanLast = n1>n4
-  console.log(`First number is larger than last: ${fisrtNumLargerThanLast}`)
+//Check if the first number is larger than last
+const fisrtNumLargerThanLast = n1 > n4
+console.log(`First number is larger than last: ${fisrtNumLargerThanLast}`)
 
 // Accomplish the following arithmetic chain:
 // Subtract the first number from the second number.
-const firstNumSubtractSecNum = n2-n1
+const firstNumSubtractSecNum = n2 - n1
 
 // Multiply the result by the third number.
 const result = firstNumSubtractSecNum * n3
 
 // Find the remainder of dividing the result by the fourth number.
-const remainder = result%n4
+const remainder = result % n4
 console.log(`The remainder of dividing the result by the fourth number is ${remainder}`)
 
 // Change the way that isOver25 calculates so that we do not need to use the NOT operator (!) in other logic comparisons. Rename the variable as appropriate
 const isLess25 = n1 < 25 || n2 < 25 || n3 < 25 || n4 < 25;
 console.log(`No value is greader than 15:${isLess25} `)
+
+console.log("-----------------Part2--------------")
+
+//Part 2:Pracitical Math
+const totalDistance = 1500;
+const totalBudget = 175;
+const fuelAvgCostPerGallon = 3;
+const speed_55 = 55
+const speed_60 = 60
+const speed_75 = 75
+
+const fuelEfficiency_55 = 30  // miles per gallon at 55 mph
+const fuelEfficiency_60 = 28  // miles per gallon at 60 mph
+const fuelEfficiency_75 = 23  // miles per gallon at 75 mph
+
+// How many gallons of fuel will you need for the entire trip?
+const totalFuel_55 = (totalDistance / fuelEfficiency_55).toFixed(2)
+const totalFuel_60 = (totalDistance / fuelEfficiency_60).toFixed(2)
+const totalFuel_75 = (totalDistance / fuelEfficiency_75).toFixed(2)
+console.log(`${totalFuel_55} gallons of fuel for 55mph,
+${totalFuel_60} gallons of fuel for 60mph,
+${totalFuel_75} gallons of fuel for 75mph`)
+
+// Will your budget be enough to cover the fuel expense?
+const totalCost_55 = totalFuel_55 *fuelAvgCostPerGallon
+const totalCost_60 = totalFuel_60 *fuelAvgCostPerGallon
+const totalCost_75 = totalFuel_75 *fuelAvgCostPerGallon
+
+console.log(`Total fuel cost $${totalCost_55} for driving 55mph,
+Total fuel cost $${totalCost_60} for driving 60mph,
+Total fuel cost $${totalCost_75} for driving 75mph`)
+
+
+// How long will the trip take, in hours?
+const totalHours_55 =totalDistance/speed_55
+const totalHours_60 =totalDistance/speed_60
+const totalHours_75 =totalDistance/speed_75
+
+console.log(`Total hours${totalHours_55} for driving 55mph,
+Total hours ${totalHours_60} for driving 60mph,
+Total hours ${totalHours_75} for driving 75mph`)
+
+
+
